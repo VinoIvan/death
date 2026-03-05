@@ -1,0 +1,382 @@
+@import '../shared/variables.css';
+
+.appointments-container {
+    padding: 1.8rem;
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.page-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+/* Кнопки без анимаций - только смена цвета */
+.btn-site {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    height: 45px;
+    white-space: nowrap;
+}
+
+.btn-site:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Фильтры */
+.filters-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: 1.8rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.filters-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1.2rem;
+}
+
+/* Значительно увеличиваем ширину полей фильтров */
+.filter-group {
+    flex: 1 1 260px; /* Увеличено с 220px */
+    min-width: 240px; /* Увеличено с 200px */
+}
+
+.filter-group.date-filter {
+    flex: 0 0 180px; /* Увеличено с 160px */
+    min-width: 180px; /* Увеличено с 160px */
+}
+
+.filter-group .form-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.filter-group .form-control,
+.filter-group .form-select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius);
+    font-size: 1rem; /* Увеличено с 0.95rem */
+    color: var(--gray-800);
+    background: var(--white);
+    height: 48px; /* Увеличено с 45px */
+}
+
+.filter-group .form-control:hover,
+.filter-group .form-select:hover {
+    border-color: var(--primary-color);
+}
+
+.filter-group .form-control:focus,
+.filter-group .form-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(139, 76, 85, 0.1);
+}
+
+/* Стили для placeholder */
+.filter-group .form-control::placeholder {
+    color: var(--gray-400);
+    font-size: 0.95rem;
+}
+
+/* Стили для select option */
+.filter-group .form-select option {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+    white-space: normal;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+.filter-actions .btn-site {
+    height: 48px; /* Увеличено с 45px */
+    padding: 0 2rem; /* Увеличено с 1.8rem */
+    font-size: 1rem;
+}
+
+/* Таблица */
+.table-container {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+    padding: 1rem 1rem;
+    background: var(--gray-100);
+    color: var(--gray-700);
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-700);
+    vertical-align: middle;
+    font-size: 0.95rem;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table tr:hover td {
+    background: var(--gray-50);
+}
+
+/* Данные в таблице */
+.appointment-date {
+    font-weight: 500;
+    color: var(--gray-800);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.appointment-time {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+}
+
+.appointment-client {
+    font-weight: 600;
+    color: var(--gray-900);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.appointment-phone {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+}
+
+.appointment-service {
+    font-weight: 500;
+    color: var(--gray-800);
+    font-size: 0.95rem;
+}
+
+/* Статусы - черный текст */
+.status-badge {
+    display: inline-block;
+    padding: 0.2rem 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: transparent !important;
+    border: none;
+    color: var(--gray-900) !important;
+}
+
+/* Кнопки-иконки без анимаций */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.btn-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--gray-300);
+    background: var(--white);
+    color: var(--gray-500);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.btn-icon:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: var(--primary-bg);
+}
+
+.btn-icon.delete:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.btn-icon.edit:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-icon.view:hover {
+    border-color: var(--info);
+    color: var(--info);
+}
+
+/* Адаптивность */
+@media (max-width: 1600px) {
+    .filter-group {
+        flex: 1 1 240px;
+        min-width: 220px;
+    }
+    
+    .filter-group.date-filter {
+        flex: 0 0 170px;
+        min-width: 170px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .filter-group {
+        flex: 1 1 220px;
+        min-width: 200px;
+    }
+    
+    .filter-group.date-filter {
+        flex: 0 0 160px;
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .filters-form {
+        gap: 1rem;
+    }
+    
+    .filter-group {
+        flex: 1 1 200px;
+        min-width: 180px;
+    }
+    
+    .filter-group.date-filter {
+        flex: 0 0 150px;
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .filters-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-group,
+    .filter-group.date-filter {
+        width: 100%;
+        flex: 1 1 auto;
+        min-width: 100%;
+    }
+    
+    .filter-actions {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        margin-left: 0;
+    }
+    
+    .filter-actions .btn-site {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .appointments-container {
+        padding: 1.2rem;
+    }
+    
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .page-title {
+        font-size: 1.6rem;
+    }
+    
+    .filters-card {
+        padding: 1.2rem;
+    }
+    
+    .filter-group .form-control,
+    .filter-group .form-select {
+        height: 45px;
+        font-size: 0.95rem;
+    }
+    
+    .filter-actions {
+        flex-direction: column;
+    }
+    
+    .filter-actions .btn-site {
+        width: 100%;
+        height: 45px;
+    }
+    
+    .table th,
+    .table td {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-group .form-label {
+        font-size: 0.9rem;
+    }
+    
+    .filter-group .form-control::placeholder {
+        font-size: 0.85rem;
+    }
+    
+    .action-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+

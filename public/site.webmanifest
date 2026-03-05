@@ -1,0 +1,41 @@
+{
+    "name": "VCM Laser - Салон лазерной эпиляции",
+    "short_name": "VCM Laser",
+    "description": "Профессиональная лазерная эпиляция в Москве. Безболезненно, безопасно, навсегда.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#8b4c55",
+    "theme_color": "#8b4c55",
+    "orientation": "portrait",
+    "categories": ["beauty", "health", "salon"],
+    "icons": [
+        {
+            "src": "/images/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/images/screenshots/home.jpg",
+            "sizes": "1280x720",
+            "type": "image/jpeg",
+            "form_factor": "wide",
+            "label": "Главная страница VCM Laser"
+        },
+        {
+            "src": "/images/screenshots/booking.jpg",
+            "sizes": "1280x720",
+            "type": "image/jpeg",
+            "form_factor": "wide",
+            "label": "Система онлайн-записи"
+        }
+    ]
+}

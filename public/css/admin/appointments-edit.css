@@ -1,0 +1,228 @@
+@import '../shared/variables.css';
+
+.appointments-edit-container {
+    padding: 1.8rem;
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.page-header .btn-site {
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.form-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.form-section-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 1.8rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.6rem;
+}
+
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--white);
+    height: 50px;
+}
+
+.form-control:hover,
+.form-select:hover {
+    border-color: var(--primary-light);
+}
+
+.form-control:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(139, 76, 85, 0.1);
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: var(--danger);
+}
+
+textarea.form-control {
+    height: auto;
+    min-height: 120px;
+    resize: vertical;
+}
+
+.error-message {
+    color: var(--danger);
+    font-size: 0.95rem;
+    margin-top: 0.4rem;
+}
+
+/* Alert */
+.alert-info {
+    background: var(--info-light);
+    border: 1px solid var(--info);
+    color: var(--info);
+    padding: 1.2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.alert-info i {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+}
+
+/* Info Box */
+.info-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-box i {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.info-box-content {
+    flex: 1;
+}
+
+.info-box-title {
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.info-box-text {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 2rem;
+    justify-content: flex-end;
+}
+
+.btn-site {
+    height: 50px;
+    padding: 0 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-site-solid {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    height: 50px;
+    padding: 0 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-site-solid:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 1.8rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-site,
+    .btn-site-solid {
+        width: 100%;
+    }
+    
+    .form-section-title {
+        font-size: 1.4rem;
+    }
+}

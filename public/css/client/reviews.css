@@ -1,0 +1,442 @@
+@import '../shared/variables.css';
+
+.reviews-container {
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+/* Page Header */
+.reviews-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.reviews-header h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.reviews-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: var(--primary-color);
+}
+
+.reviews-header p {
+    color: var(--gray-600);
+    font-size: 1.8rem;
+    max-width: 900px;
+    margin: 1.5rem auto 0;
+    font-weight: 400;
+}
+
+/* Filters */
+.reviews-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.rating-filters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.rating-filter {
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 50px;
+    background: var(--white);
+    color: var(--gray-700);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+}
+
+.rating-filter:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.rating-filter.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* Кнопка в стиле btn-outline */
+.btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Reviews List */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.review-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+}
+
+.review-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-hover);
+}
+
+.review-info {
+    width: 100%;
+}
+
+.review-author {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.8rem;
+}
+
+.review-rating {
+    margin-bottom: 1.2rem;
+    font-size: 1.6rem;
+}
+
+.review-rating i {
+    margin-right: 0.4rem;
+    color: var(--primary-color);
+}
+
+.review-rating i.far {
+    color: var(--gray-300);
+}
+
+.review-content {
+    color: var(--gray-700);
+    font-size: 1.6rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.review-meta {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0.8rem;
+}
+
+.review-date {
+    color: var(--gray-500);
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.review-date i {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.review-service {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    background: transparent;
+    border: 1px solid var(--gray-300);
+    border-radius: 50px;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    transition: all 0.2s ease;
+}
+
+.review-service:hover {
+    border-color: var(--primary-color);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 4rem;
+}
+
+.pagination .page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 50px;
+    padding: 0 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 12px;
+    color: var(--gray-700);
+    background: var(--white);
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.pagination .page-link:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.pagination .active .page-link {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 30px;
+    box-shadow: var(--shadow-sm);
+    margin: 2rem 0;
+}
+
+.empty-state i {
+    font-size: 6rem;
+    color: var(--gray-300);
+    margin-bottom: 2rem;
+}
+
+.empty-state h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.empty-state p {
+    color: var(--gray-600);
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+}
+
+.empty-state .btn-outline {
+    display: inline-block;
+    min-width: 250px;
+}
+
+/* ========== МОБИЛЬНАЯ АДАПТАЦИЯ ========== */
+@media (max-width: 1200px) {
+    .reviews-header h1 {
+        font-size: 4rem;
+    }
+    
+    .reviews-header p {
+        font-size: 1.6rem;
+    }
+    
+    .review-author {
+        font-size: 1.8rem;
+    }
+    
+    .review-content {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .reviews-header h1 {
+        font-size: 3.5rem;
+    }
+    
+    .reviews-header p {
+        font-size: 1.5rem;
+    }
+    
+    .reviews-filters {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.8rem;
+    }
+    
+    .rating-filters {
+        justify-content: center;
+    }
+    
+    .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .review-item {
+        padding: 2rem;
+    }
+    
+    .review-author {
+        font-size: 1.7rem;
+    }
+    
+    .review-content {
+        font-size: 1.4rem;
+    }
+    
+    .review-meta {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-header h1 {
+        font-size: 3rem;
+    }
+    
+    .reviews-header p {
+        font-size: 1.4rem;
+    }
+    
+    .rating-filter {
+        padding: 0.7rem 1.5rem;
+        font-size: 1.4rem;
+        min-width: 60px;
+    }
+    
+    .btn-outline {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+    }
+    
+    .review-item {
+        padding: 1.8rem;
+    }
+    
+    .review-author {
+        font-size: 1.6rem;
+    }
+    
+    .review-rating {
+        font-size: 1.4rem;
+    }
+    
+    .review-content {
+        font-size: 1.3rem;
+    }
+    
+    .review-date {
+        font-size: 1.2rem;
+    }
+    
+    .review-service {
+        font-size: 1.2rem;
+        padding: 0.4rem 1.5rem;
+    }
+    
+    .review-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .pagination .page-link {
+        min-width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .reviews-header p {
+        font-size: 1.2rem;
+    }
+    
+    .rating-filter {
+        padding: 0.6rem 1.2rem;
+        font-size: 1.3rem;
+        min-width: 50px;
+    }
+    
+    .btn-outline {
+        font-size: 1.3rem;
+        padding: 0.9rem 1.5rem;
+    }
+    
+    .review-item {
+        padding: 1.5rem;
+    }
+    
+    .review-author {
+        font-size: 1.4rem;
+    }
+    
+    .review-rating {
+        font-size: 1.3rem;
+    }
+    
+    .review-content {
+        font-size: 1.2rem;
+    }
+    
+    .review-date {
+        font-size: 1.1rem;
+    }
+    
+    .review-service {
+        font-size: 1.1rem;
+        padding: 0.3rem 1.2rem;
+    }
+    
+    .pagination .page-link {
+        min-width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+}

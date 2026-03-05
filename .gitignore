@@ -1,0 +1,45 @@
+# Laravel specific
+/vendor/
+/node_modules/
+/.env
+/.env.*
+!.env.example
+/storage/
+/public/storage
+/storage/*.key
+/bootstrap/cache/
+
+# IDE
+/.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+storage/logs/*
+!storage/logs/.gitignore
+
+# Cache
+storage/framework/cache/*
+!storage/framework/cache/.gitignore
+storage/framework/sessions/*
+!storage/framework/sessions/.gitignore
+storage/framework/views/*
+!storage/framework/views/.gitignore
+
+# Testing
+/phpunit.xml
+.phpunit.result.cache
+
+# Composer
+/composer.phar
+/composer.lock
+
+# NPM
+/package-lock.json
+/yarn.lock

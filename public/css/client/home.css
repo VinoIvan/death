@@ -1,0 +1,1588 @@
+@import '../shared/variables.css';
+
+/* ========== HERO СЕКЦИЯ ========== */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-top: -76px;
+    padding-top: 76px;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.85) 0%, 
+        rgba(0, 0, 0, 0.7) 40%, 
+        rgba(0, 0, 0, 0.4) 100%
+    );
+}
+
+.hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    min-height: calc(100vh - 350px);
+    padding-top: 2rem;
+}
+
+.hero-content {
+    max-width: 900px;
+    color: white;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text-large {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-text-medium {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+.hero-offer-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.hero-offer-text {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1.4;
+}
+
+.highlight {
+    color: white;
+    font-weight: 700;
+    display: inline-block;
+    margin-left: 0.3rem;
+}
+
+.hero-button {
+    display: inline-block;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 1.2rem 3.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    justify-self: end;
+}
+
+.hero-button:hover {
+    background: white;
+    color: var(--primary-color);
+    border-color: white;
+}
+
+.hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-circle {
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-circle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ========== СТАТИСТИКА ========== */
+.hero-stats-row {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+    padding: 1.5rem 0 1rem;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.hero-stat-item {
+    text-align: center;
+    color: var(--gray-900);
+    padding: 2rem 1.5rem;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid var(--gray-200);
+    transition: border-color 0.2s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.hero-stat-item:hover {
+    border-color: var(--primary-color);
+}
+
+.hero-stat-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.hero-stat-label {
+    font-size: 1.4rem;
+    color: var(--gray-700);
+    font-weight: 500;
+}
+
+/* ========== АНИМАЦИИ ========== */
+.hero-content,
+.hero-image-wrapper,
+.hero-stats-row {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero-title {
+    opacity: 0;
+    animation: fadeIn 1s ease 0.2s forwards;
+}
+
+.hero-subtitle {
+    opacity: 0;
+    animation: fadeIn 1s ease 0.4s forwards;
+}
+
+.hero-text-large {
+    opacity: 0;
+    animation: fadeIn 1s ease 0.6s forwards;
+}
+
+.hero-text-medium {
+    opacity: 0;
+    animation: fadeIn 1s ease 0.8s forwards;
+}
+
+.hero-offer-row {
+    opacity: 0;
+    animation: fadeIn 1s ease 1s forwards;
+}
+
+.hero-image-wrapper {
+    opacity: 0;
+    animation: fadeInRight 1s ease 0.3s forwards;
+}
+
+.hero-stats-row {
+    opacity: 0;
+    animation: fadeIn 1s ease 1.2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.3);
+    }
+}
+
+/* ========== СЕКЦИЯ УСЛУГ ========== */
+.services-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    width: 100%;
+}
+
+.services-section .container {
+    max-width: 100%;
+    padding: 0 2rem;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.services-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: var(--primary-color);
+}
+
+.services-subtitle {
+    font-size: 1.8rem;
+    color: var(--gray-500);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.service-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.2s ease;
+    width: 100%;
+}
+
+.service-item:hover {
+    border-color: var(--primary-color);
+}
+
+.service-info {
+    flex: 1;
+    max-width: 70%;
+}
+
+.service-name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.service-description {
+    color: var(--gray-500);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.service-meta {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.service-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.service-duration {
+    color: var(--gray-500);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.5rem;
+}
+
+.service-duration i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.service-actions {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.btn-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gray-200);
+    background: var(--white);
+    color: var(--gray-600);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.btn-icon:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-primary-sm {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary-sm:hover {
+    background: var(--primary-hover);
+}
+
+.btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 1.5rem 4rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.services-footer {
+    text-align: center;
+    margin-top: 5rem;
+    max-width: 1750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========== СЕКЦИЯ ОТЗЫВОВ ========== */
+.reviews-section {
+    padding: 6rem 0;
+    background: var(--gray-50);
+    width: 100%;
+}
+
+.reviews-section .container {
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.reviews-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.reviews-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: var(--primary-color);
+}
+
+.reviews-subtitle {
+    font-size: 1.8rem;
+    color: var(--gray-600);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    transition: border-color 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+}
+
+.review-item:hover {
+    border-color: var(--primary-color);
+}
+
+.review-info {
+    width: 100%;
+}
+
+.review-author {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.6rem;
+}
+
+.review-rating {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.review-rating i {
+    margin-right: 0.3rem;
+    color: var(--primary-color);
+}
+
+.review-rating i.far {
+    color: var(--gray-300);
+}
+
+.review-content {
+    color: var(--gray-700);
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    font-style: italic;
+}
+
+.review-meta {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0.6rem;
+}
+
+.review-date {
+    color: var(--gray-500);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.review-date i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.review-service {
+    display: inline-block;
+    padding: 0.4rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--gray-300);
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    transition: all 0.2s ease;
+}
+
+.review-service:hover {
+    border-color: var(--primary-color);
+}
+
+.reviews-footer {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* ========== СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ ========== */
+.offer-section {
+    padding: 6rem 0;
+    background: #a66d75;
+    width: 100%;
+}
+
+.offer-section .container {
+    max-width: 100%;
+    padding: 0 2rem;
+}
+
+.offer-card {
+    background: #ffffff;
+    border: 1px solid var(--gray-200);
+    border-radius: 30px;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: border-color 0.2s ease;
+    max-width: 1750px;
+    margin: 0 auto;
+}
+
+.offer-card:hover {
+    border-color: var(--primary-color);
+}
+
+.offer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.offer-text {
+    flex: 1;
+    min-width: 350px;
+}
+
+.offer-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--gray-500);
+    margin-bottom: 0.6rem;
+}
+
+.offer-highlight {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+}
+
+.offer-description {
+    font-size: 1.5rem;
+    color: var(--gray-600);
+}
+
+.offer-badge-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offer-badge {
+    width: 220px;
+    height: 220px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.offer-badge::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-light);
+    animation: ripple 2s ease-out infinite;
+}
+
+.offer-badge span {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.offer-button {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 1.5rem 4rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+
+.offer-button:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ========== СЕКЦИЯ FAQ ========== */
+.faq-section {
+    padding: 6rem 0;
+    background: var(--gray-50);
+    width: 100%;
+}
+
+.faq-section .container {
+    max-width: 100%;
+    padding: 0 2rem;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-header-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.faq-header-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: var(--primary-color);
+}
+
+.faq-header-subtitle {
+    font-size: 1.8rem;
+    color: var(--gray-500);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-wrapper {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 4rem;
+    max-width: 1750px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.faq-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 100px;
+}
+
+.faq-left-image {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.faq-left-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.faq-left-image:hover img {
+    transform: scale(1.05);
+}
+
+.faq-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item:hover {
+    border-color: var(--primary-color);
+}
+
+.faq-question {
+    padding: 2.2rem 2.8rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    user-select: none;
+}
+
+.faq-question:hover {
+    background: var(--primary-bg);
+}
+
+.faq-question h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+    flex: 1;
+    padding-right: 2rem;
+    line-height: 1.4;
+}
+
+.faq-question i {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 2.8rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: var(--white);
+    border-top: 0px solid var(--gray-200);
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 2.8rem 2.2rem 2.8rem;
+    max-height: 500px;
+    border-top-width: 1px;
+}
+
+.faq-answer p {
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+/* ========== ОБЩАЯ АДАПТИВНОСТЬ ========== */
+@media (max-width: 1800px) {
+    .hero-image-circle {
+        width: 650px;
+        height: 650px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .hero-title {
+        font-size: 3.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.7rem;
+    }
+    
+    .hero-text-large {
+        font-size: 2.2rem;
+    }
+    
+    .hero-text-medium {
+        font-size: 1.5rem;
+    }
+    
+    .hero-offer-text {
+        font-size: 1.6rem;
+    }
+    
+    .hero-button {
+        font-size: 1.5rem;
+        padding: 1.1rem 3.2rem;
+    }
+    
+    .hero-image-circle {
+        width: 600px;
+        height: 600px;
+    }
+    
+    .hero-stat-number {
+        font-size: 3.8rem;
+    }
+    
+    .hero-stat-label {
+        font-size: 1.3rem;
+    }
+    
+    .services-title,
+    .reviews-title,
+    .faq-header-title {
+        font-size: 3.8rem;
+    }
+    
+    .services-subtitle,
+    .reviews-subtitle,
+    .faq-header-subtitle {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.6rem;
+    }
+    
+    .hero-text-large {
+        font-size: 2rem;
+    }
+    
+    .hero-text-medium {
+        font-size: 1.4rem;
+    }
+    
+    .hero-offer-text {
+        font-size: 1.5rem;
+    }
+    
+    .hero-button {
+        font-size: 1.4rem;
+        padding: 1rem 3rem;
+    }
+    
+    .hero-image-circle {
+        width: 550px;
+        height: 550px;
+    }
+    
+    .hero-stat-number {
+        font-size: 3.5rem;
+    }
+    
+    .hero-stat-label {
+        font-size: 1.2rem;
+    }
+    
+    .services-title,
+    .reviews-title,
+    .faq-header-title {
+        font-size: 3.5rem;
+    }
+    
+    .services-subtitle,
+    .reviews-subtitle,
+    .faq-header-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .service-name {
+        font-size: 1.8rem;
+    }
+    
+    .service-description {
+        font-size: 1.3rem;
+    }
+    
+    .service-price {
+        font-size: 2rem;
+    }
+    
+    .service-duration {
+        font-size: 1.4rem;
+    }
+    
+    .review-author {
+        font-size: 1.6rem;
+    }
+    
+    .review-content {
+        font-size: 1.3rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.5rem;
+    }
+    
+    .faq-answer p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        min-height: auto;
+        padding-top: 3rem;
+    }
+    
+    .hero-content {
+        margin: 0 auto;
+    }
+    
+    .hero-row {
+        align-items: center;
+    }
+    
+    .hero-offer-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .hero-button {
+        justify-self: center;
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .hero-image-circle {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+    }
+    
+    .hero-stats-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .service-info {
+        max-width: 60%;
+    }
+    
+    .faq-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .faq-left {
+        position: static;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .faq-left-image img {
+        height: 350px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-text-large {
+        font-size: 1.9rem;
+    }
+    
+    .hero-text-medium {
+        font-size: 1.3rem;
+    }
+    
+    .hero-offer-text {
+        font-size: 1.4rem;
+    }
+    
+    .hero-button {
+        font-size: 1.3rem;
+        padding: 0.9rem 2.5rem;
+    }
+    
+    .hero-image-circle {
+        width: 450px;
+        height: 450px;
+    }
+    
+    .hero-stats-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .hero-stat-number {
+        font-size: 3.2rem;
+    }
+    
+    .hero-stat-label {
+        font-size: 1.1rem;
+    }
+    
+    .services-title,
+    .reviews-title,
+    .faq-header-title {
+        font-size: 3.2rem;
+    }
+    
+    .services-subtitle,
+    .reviews-subtitle,
+    .faq-header-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+    
+    .service-info {
+        max-width: 100%;
+    }
+    
+    .service-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .review-item {
+        padding: 2rem;
+    }
+    
+    .review-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .offer-card {
+        padding: 3rem;
+    }
+    
+    .offer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .offer-badge {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .offer-badge span {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 0 40px;
+        min-height: auto;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .hero-text-large {
+        font-size: 1.7rem;
+    }
+    
+    .hero-text-medium {
+        font-size: 1.2rem;
+    }
+    
+    .hero-offer-text {
+        font-size: 1.3rem;
+    }
+    
+    .hero-button {
+        font-size: 1.2rem;
+        padding: 0.8rem 2rem;
+        max-width: 100%;
+    }
+    
+    .hero-image-circle {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .hero-stats-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 100%;
+    }
+    
+    .hero-stat-item {
+        padding: 1.5rem;
+    }
+    
+    .hero-stat-number {
+        font-size: 3rem;
+    }
+    
+    .hero-stat-label {
+        font-size: 1.1rem;
+    }
+    
+    .services-section,
+    .reviews-section,
+    .offer-section,
+    .faq-section {
+        padding: 4rem 0;
+    }
+    
+    .services-title,
+    .reviews-title,
+    .faq-header-title {
+        font-size: 2.8rem;
+    }
+    
+    .services-subtitle,
+    .reviews-subtitle,
+    .faq-header-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.8rem;
+    }
+    
+    .service-info {
+        max-width: 100%;
+    }
+    
+    .service-name {
+        font-size: 1.5rem;
+    }
+    
+    .service-description {
+        font-size: 1.2rem;
+    }
+    
+    .service-meta {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    
+    .service-price {
+        font-size: 1.7rem;
+    }
+    
+    .service-duration {
+        font-size: 1.3rem;
+    }
+    
+    .service-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    
+    .btn-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+    }
+    
+    .btn-primary-sm {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        font-size: 1.1rem;
+        text-align: center;
+        justify-content: center;
+        white-space: nowrap;
+    }
+    
+    .btn-outline {
+        font-size: 1.4rem;
+        padding: 1.2rem 2rem;
+        width: 100%;
+    }
+    
+    .review-item {
+        padding: 1.8rem;
+    }
+    
+    .review-author {
+        font-size: 1.5rem;
+    }
+    
+    .review-content {
+        font-size: 1.2rem;
+    }
+    
+    .review-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .review-date,
+    .review-service {
+        font-size: 1.1rem;
+    }
+    
+    .offer-card {
+        padding: 2rem;
+    }
+    
+    .offer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .offer-text {
+        min-width: 100%;
+    }
+    
+    .offer-title {
+        font-size: 1.6rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .offer-highlight {
+        font-size: 2.2rem;
+        margin-bottom: 0.3rem;
+        word-break: break-word;
+    }
+    
+    .offer-description {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+    
+    .offer-badge-wrapper {
+        margin-top: 0.5rem;
+    }
+    
+    .offer-badge {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .offer-badge span {
+        font-size: 2rem;
+    }
+    
+    .offer-button {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        width: 100%;
+        margin-top: 1rem;
+        white-space: normal;
+        word-break: break-word;
+    }
+    
+    .faq-question {
+        padding: 1.5rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.3rem;
+        padding-right: 1rem;
+    }
+    
+    .faq-answer p {
+        font-size: 1.2rem;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-text-large {
+        font-size: 1.5rem;
+    }
+    
+    .hero-text-medium {
+        font-size: 1.1rem;
+    }
+    
+    .hero-offer-text {
+        font-size: 1.2rem;
+    }
+    
+    .hero-button {
+        font-size: 1.1rem;
+        padding: 0.7rem 1.5rem;
+    }
+    
+    .hero-image-circle {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .services-title,
+    .reviews-title,
+    .faq-header-title {
+        font-size: 2.4rem;
+    }
+    
+    .services-subtitle,
+    .reviews-subtitle,
+    .faq-header-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .service-item {
+        padding: 1.5rem;
+    }
+    
+    .service-name {
+        font-size: 1.3rem;
+    }
+    
+    .service-description {
+        font-size: 1.1rem;
+    }
+    
+    .service-price {
+        font-size: 1.5rem;
+    }
+    
+    .service-duration {
+        font-size: 1.1rem;
+    }
+    
+    .service-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    
+    .service-actions {
+        flex-direction: row;
+        gap: 0.8rem;
+    }
+    
+    .btn-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+    }
+    
+    .btn-primary-sm {
+        font-size: 1rem;
+        padding: 0.7rem 0.5rem;
+    }
+    
+    .review-author {
+        font-size: 1.3rem;
+    }
+    
+    .review-content {
+        font-size: 1.1rem;
+    }
+    
+    .review-date,
+    .review-service {
+        font-size: 1rem;
+    }
+    
+    .offer-title {
+        font-size: 1.4rem;
+    }
+    
+    .offer-highlight {
+        font-size: 2rem;
+    }
+    
+    .offer-description {
+        font-size: 1.1rem;
+    }
+    
+    .offer-badge {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .offer-badge span {
+        font-size: 1.8rem;
+    }
+    
+    .offer-button {
+        font-size: 1.1rem;
+        padding: 0.9rem 1.5rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.2rem;
+    }
+    
+    .faq-answer p {
+        font-size: 1.1rem;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 1.2rem 1.2rem 1.2rem;
+    }
+}

@@ -1,0 +1,956 @@
+@import '../shared/variables.css';
+@import '../shared/buttons.css';
+@import '../shared/forms.css';
+
+/* Общие стили контейнера - увеличен на 25% */
+.container {
+    max-width: 1500px !important;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.container-fluid {
+    max-width: 100%;
+    padding: 0 2rem;
+}
+
+/* Navigation - на всю ширину */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 1.2rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    padding: 1rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.navbar-brand {
+    margin-right: 0;
+    flex-shrink: 0;
+}
+
+.navbar-brand img {
+    height: 70px;
+    transition: var(--transition);
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.03);
+}
+
+/* Меню по центру */
+.navbar-nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.8rem;
+}
+
+.nav-link {
+    color: var(--gray-700);
+    font-weight: 500;
+    font-size: 1.6rem;
+    padding: 0.8rem 1.5rem;
+    transition: var(--transition);
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Только активная страница имеет подчеркивание */
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 30%;
+    height: 3px;
+    background: var(--primary-color);
+    transform: translateX(-50%);
+}
+
+/* Правая часть с кнопками */
+.navbar-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* Ссылка "Войти" */
+.nav-link-login {
+    color: var(--gray-700);
+    font-weight: 500;
+    font-size: 1.6rem;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.nav-link-login:hover {
+    color: var(--primary-color);
+}
+
+/* Кнопка регистрации */
+.navbar .btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1.6rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(139, 76, 85, 0.2);
+    white-space: nowrap;
+}
+
+.navbar .btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 76, 85, 0.3);
+}
+
+/* User menu - без иконки */
+.navbar .dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    color: var(--gray-700);
+    font-weight: 500;
+    font-size: 1.6rem;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+    background: transparent;
+    border: none;
+}
+
+.navbar .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.8rem;
+    vertical-align: middle;
+    content: "";
+    border-top: 0.4em solid;
+    border-right: 0.4em solid transparent;
+    border-bottom: 0;
+    border-left: 0.4em solid transparent;
+    color: var(--gray-500);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 0.8rem 0;
+    margin-top: 0.8rem;
+    min-width: 220px;
+}
+
+.dropdown-item {
+    padding: 0.9rem 2rem;
+    color: var(--gray-700);
+    font-size: 1.4rem;
+    transition: var(--transition);
+}
+
+.dropdown-item:hover {
+    background: rgba(139, 76, 85, 0.05);
+    color: var(--primary-color);
+}
+
+.dropdown-item.text-danger:hover {
+    background: rgba(220, 53, 69, 0.05);
+    color: #dc3545;
+}
+
+.dropdown-divider {
+    border-color: var(--gray-200);
+}
+
+/* Main content */
+.main-content {
+    min-height: calc(100vh - 300px);
+    padding-top: 100px;
+}
+
+/* Section titles */
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 1.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 90px;
+    height: 4px;
+    background: var(--primary-color);
+}
+
+.section-title-center {
+    display: block;
+    text-align: center;
+}
+
+.section-title-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Cards */
+.card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+    padding: 1.8rem;
+    transition: var(--transition);
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(139, 76, 85, 0.1);
+}
+
+/* Hero section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--accent-bg) 100%);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    margin-top: -76px;
+    padding-top: 76px;
+}
+
+/* Features */
+.feature-card {
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.feature-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--primary-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+/* Footer - на всю ширину */
+.footer {
+    background: var(--white);
+    border-top: 2px solid var(--gray-200);
+    padding: 5rem 0 2.5rem;
+    margin-top: 5rem;
+    font-size: 1.4rem;
+    width: 100%;
+}
+
+.footer .container-fluid {
+    max-width: 100%;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.footer .row {
+    margin: 0;
+    width: 100%;
+}
+
+[class*="col-"] {
+    padding: 0 15px;
+}
+
+.footer-logo {
+    margin-bottom: 2rem;
+}
+
+.footer-logo img {
+    height: 75px;
+    transition: var(--transition);
+}
+
+.footer-logo:hover img {
+    transform: scale(1.03);
+}
+
+.footer-description {
+    color: var(--gray-700);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-size: 1.4rem;
+    max-width: 400px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-social-link {
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--gray-400);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-500);
+    transition: var(--transition);
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+.footer-social-link:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    background: rgba(139, 76, 85, 0.02);
+}
+
+.footer-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 2rem;
+    letter-spacing: 0.3px;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.footer-links,
+.footer-contact,
+.footer-hours {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 1.2rem;
+}
+
+.footer-links a {
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 1.4rem;
+    display: inline-block;
+    padding: 0.2rem 0;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-contact li {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+    color: var(--gray-700);
+    font-size: 1.4rem;
+    line-height: 1.7;
+}
+
+.footer-contact i {
+    color: var(--primary-color);
+    width: 28px;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+}
+
+.footer-contact a {
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact a:hover {
+    color: var(--primary-color);
+}
+
+.footer-contact div {
+    line-height: 1.8;
+}
+
+/* График работы - в строчку */
+.footer-hours li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: var(--gray-700);
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.footer-hours li:last-child {
+    border-bottom: none;
+}
+
+.footer-hours .days {
+    color: var(--gray-800);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.footer-hours .time {
+    color: var(--primary-color);
+    font-weight: 500;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 1.4rem;
+}
+
+.footer-bottom {
+    margin-top: 5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--gray-300);
+    width: 100%;
+}
+
+.footer-bottom .row {
+    width: 100%;
+    margin: 0;
+}
+
+.footer-copyright {
+    color: var(--gray-700);
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.footer-policy {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    color: var(--gray-700);
+    font-size: 1.3rem;
+}
+
+.footer-policy a {
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-policy a:hover {
+    color: var(--primary-color);
+}
+
+.footer-policy .separator {
+    color: var(--gray-300);
+}
+
+/* ========== МОБИЛЬНАЯ АДАПТАЦИЯ ========== */
+@media (max-width: 1200px) {
+    .nav-link {
+        font-size: 1.5rem;
+        padding: 0.7rem 1.2rem;
+    }
+    
+    .nav-link-login {
+        font-size: 1.5rem;
+    }
+    
+    .navbar .btn-primary {
+        font-size: 1.5rem;
+        padding: 0.8rem 2rem;
+    }
+    
+    .navbar .dropdown-toggle {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+    
+    .navbar-brand img {
+        height: 60px;
+    }
+    
+    .navbar-toggler {
+        order: 2;
+        margin-left: auto;
+        border: 1px solid var(--gray-300);
+        padding: 0.8rem 1rem;
+    }
+    
+    .navbar-toggler-icon {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 2rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border-radius: 0 0 20px 20px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .navbar-nav-center {
+        position: static;
+        transform: none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 2rem;
+        gap: 0.5rem;
+    }
+    
+    .nav-link {
+        text-align: center;
+        padding: 1.2rem;
+        font-size: 1.6rem;
+        border-radius: 10px;
+    }
+    
+    .nav-link:hover {
+        background: var(--primary-bg);
+    }
+    
+    .nav-link.active {
+        background: var(--primary-bg);
+    }
+    
+    .nav-link.active::after {
+        display: none;
+    }
+    
+    .navbar-nav-right {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .nav-link-login {
+        text-align: center;
+        flex: 1 1 auto;
+        min-width: 120px;
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+        border: 1px solid var(--gray-200);
+        border-radius: 10px;
+    }
+    
+    .navbar .btn-primary {
+        flex: 1 1 auto;
+        min-width: 140px;
+        margin: 0;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem;
+    }
+    
+    .navbar .dropdown {
+        width: auto;
+        flex: 1 1 auto;
+    }
+    
+    .navbar .dropdown-toggle {
+        justify-content: center;
+        width: 100%;
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem;
+        border: 1px solid var(--gray-200);
+        border-radius: 10px;
+        background: var(--white);
+    }
+    
+    .navbar .dropdown-toggle::after {
+        margin-left: 0.5rem;
+    }
+    
+    .dropdown-menu {
+        width: 100%;
+        text-align: center;
+        position: absolute !important;
+        margin-top: 0.5rem;
+        border: 1px solid var(--gray-200);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .dropdown-item {
+        padding: 1rem;
+        font-size: 1.4rem;
+    }
+    
+    .footer {
+        padding: 4rem 0 2rem;
+    }
+    
+    .footer .container-fluid {
+        padding: 0 2rem;
+        width: 100%;
+    }
+    
+    .footer .row {
+        margin: 0 -15px;
+        width: calc(100% + 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 50px;
+    }
+    
+    .nav-link {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .navbar-nav-right {
+        gap: 0.8rem;
+    }
+    
+    .nav-link-login {
+        font-size: 1.4rem;
+        padding: 0.9rem 1.2rem;
+        min-width: 100px;
+    }
+    
+    .navbar .btn-primary {
+        font-size: 1.4rem;
+        padding: 0.9rem 1.2rem;
+        min-width: 120px;
+    }
+    
+    .navbar .dropdown-toggle {
+        font-size: 1.4rem;
+        padding: 0.9rem 1.2rem;
+    }
+    
+    .dropdown-item {
+        font-size: 1.3rem;
+        padding: 0.9rem;
+    }
+    
+    /* Footer адаптация - на всю ширину */
+    .footer {
+        padding: 3rem 0 1.5rem;
+        font-size: 1.3rem;
+    }
+    
+    .footer .container-fluid {
+        padding: 0 2rem;
+        width: 100%;
+    }
+    
+    .footer .row {
+        margin: 0 -15px;
+        width: calc(100% + 30px);
+    }
+    
+    .footer [class*="col-"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 2rem;
+        padding: 0 15px;
+    }
+    
+    .footer-logo {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .footer-logo img {
+        height: 60px;
+        margin: 0 auto;
+    }
+    
+    .footer-description {
+        max-width: 100%;
+        text-align: center;
+        font-size: 1.3rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .footer-social {
+        justify-content: center;
+        gap: 1.2rem;
+    }
+    
+    .footer-social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .footer-title {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+    }
+    
+    .footer-links {
+        text-align: center;
+    }
+    
+    .footer-links li {
+        margin-bottom: 1rem;
+    }
+    
+    .footer-links a {
+        font-size: 1.3rem;
+    }
+    
+    .footer-contact {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .footer-contact li {
+        justify-content: flex-start;
+        text-align: left;
+        font-size: 1.3rem;
+    }
+    
+    .footer-hours {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .footer-hours li {
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 1rem;
+        font-size: 1.3rem;
+    }
+    
+    .footer-hours .days {
+        font-size: 1.3rem;
+    }
+    
+    .footer-hours .time {
+        font-size: 1.2rem;
+    }
+    
+    .footer-bottom {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-bottom .row {
+        margin: 0;
+        width: 100%;
+    }
+    
+    .footer-bottom [class*="col-"] {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+    
+    .footer-copyright {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    .footer-policy {
+        justify-content: center;
+        gap: 1rem;
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar-nav-right {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .nav-link-login,
+    .navbar .btn-primary,
+    .navbar .dropdown {
+        flex: 1 1 calc(50% - 0.5rem);
+        min-width: 0;
+    }
+    
+    .nav-link-login {
+        order: 1;
+    }
+    
+    .navbar .btn-primary {
+        order: 2;
+    }
+    
+    .navbar .dropdown {
+        order: 3;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand img {
+        height: 45px;
+    }
+    
+    .nav-link {
+        font-size: 1.4rem;
+        padding: 0.9rem;
+    }
+    
+    .navbar-nav-right {
+        flex-direction: column;
+    }
+    
+    .nav-link-login,
+    .navbar .btn-primary,
+    .navbar .dropdown {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+    
+    .nav-link-login {
+        font-size: 1.4rem;
+        padding: 0.9rem;
+    }
+    
+    .navbar .btn-primary {
+        font-size: 1.4rem;
+        padding: 0.9rem;
+    }
+    
+    .navbar .dropdown-toggle {
+        font-size: 1.4rem;
+        padding: 0.9rem;
+    }
+    
+    .dropdown-item {
+        font-size: 1.3rem;
+        padding: 0.9rem;
+    }
+    
+    .footer-logo img {
+        height: 50px;
+    }
+    
+    .footer-description {
+        font-size: 1.2rem;
+    }
+    
+    .footer-social-link {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
+    }
+    
+    .footer-title {
+        font-size: 1.4rem;
+    }
+    
+    .footer-links a {
+        font-size: 1.2rem;
+    }
+    
+    .footer-contact li {
+        font-size: 1.2rem;
+    }
+    
+    .footer-contact i {
+        font-size: 1.3rem;
+        width: 24px;
+    }
+    
+    .footer-hours li {
+        font-size: 1.2rem;
+    }
+    
+    .footer-hours .days {
+        font-size: 1.2rem;
+    }
+    
+    .footer-hours .time {
+        font-size: 1.1rem;
+    }
+    
+    .footer-copyright {
+        font-size: 1.1rem;
+    }
+    
+    .footer-policy {
+        font-size: 1.1rem;
+        gap: 0.8rem;
+    }
+}

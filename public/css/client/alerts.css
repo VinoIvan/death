@@ -1,0 +1,87 @@
+/* Уведомления - в цвете сайта */
+.alert {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(139, 76, 85, 0.2);
+    animation: slideIn 0.3s ease forwards;
+    border: none !important;
+}
+
+/* Переопределяем Bootstrap с высоким приоритетом */
+.alert.alert-success {
+    background: #8b4c55 !important;
+    color: white !important;
+}
+
+.alert.alert-success i {
+    color: white !important;
+}
+
+.alert.alert-success .btn-close {
+    filter: brightness(0) invert(1) !important;
+    opacity: 0.8;
+}
+
+.alert.alert-success .btn-close:hover {
+    opacity: 1 !important;
+}
+
+.alert.alert-danger {
+    background: #dc3545 !important;
+    color: white !important;
+}
+
+.alert.alert-danger i {
+    color: white !important;
+}
+
+.alert.alert-danger .btn-close {
+    filter: brightness(0) invert(1) !important;
+    opacity: 0.8;
+}
+
+.alert.alert-danger .btn-close:hover {
+    opacity: 1 !important;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.alert.hide {
+    animation: slideOut 0.3s ease forwards;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .alert {
+        min-width: 250px;
+        right: 10px;
+        left: 10px;
+        max-width: calc(100% - 20px);
+    }
+}

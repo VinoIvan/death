@@ -1,0 +1,82 @@
+@import '../shared/variables.css';
+
+/* Admin Alerts - в цвете сайта */
+.admin-alert {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 280px;
+    max-width: 350px;
+    padding: 1rem 1.5rem;
+    border-radius: 40px;
+    box-shadow: 0 8px 20px rgba(139, 76, 85, 0.15);
+    animation: slideIn 0.3s ease forwards;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.admin-alert-success {
+    background: #8b4c55;
+    color: white;
+}
+
+.admin-alert-danger {
+    background: #dc3545;
+    color: white;
+}
+
+/* Крестик для закрытия */
+.admin-alert .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1.2rem auto no-repeat;
+    border: none;
+    flex-shrink: 0;
+}
+
+.admin-alert .btn-close:hover {
+    opacity: 1;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .admin-alert {
+        min-width: 240px;
+        right: 10px;
+        left: 10px;
+        max-width: calc(100% - 20px);
+        font-size: 1.1rem;
+        padding: 0.8rem 1.2rem;
+    }
+}

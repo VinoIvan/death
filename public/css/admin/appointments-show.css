@@ -1,0 +1,251 @@
+@import '../shared/variables.css';
+
+.appointments-show-container {
+    padding: 1.8rem;
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* Стили для кнопок - только изменение цвета, без движений */
+.btn-site {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    cursor: pointer;
+    height: 48px;
+}
+
+.btn-site:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    /* transform: none !important; */
+    /* box-shadow: none !important; */
+}
+
+/* Стили для статусов - теперь как обычный текст в строке */
+.status-badge {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--gray-900); /* Все статусы черные */
+    background: transparent !important;
+    padding: 0;
+}
+
+/* Стили для карточек - только изменение обводки */
+.info-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: 1.8rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.8rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    height: fit-content;
+}
+
+.info-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-hover);
+    /* transform: none; */
+}
+
+.info-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* Стили для строк информации */
+.info-row {
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed var(--gray-200);
+    align-items: center; /* Выравнивание по центру */
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    width: 150px;
+    color: var(--gray-500);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.info-value {
+    flex: 1;
+    color: var(--gray-900);
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.info-value.price {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.info-value a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.info-value a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* Стили для отзыва */
+.review-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.review-rating {
+    margin-bottom: 1rem;
+}
+
+.review-rating i {
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.review-rating i.far {
+    color: var(--gray-300);
+}
+
+.review-rating span {
+    margin-left: 0.5rem;
+    color: var(--gray-600);
+    font-size: 1rem;
+}
+
+.review-text {
+    color: var(--gray-700);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.review-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gray-500);
+    font-size: 0.95rem;
+}
+
+.review-status {
+    display: inline-block;
+    padding: 0.3rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.review-status.approved {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.review-status.pending {
+    background: var(--warning-light);
+    color: #856404;
+}
+
+/* Сетка для двух колонок */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .appointments-show-container {
+        padding: 1.2rem;
+    }
+    
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    
+    .info-label {
+        width: auto;
+    }
+    
+    .review-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-card {
+        padding: 1.2rem;
+    }
+    
+    .info-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .info-label,
+    .info-value {
+        font-size: 0.95rem;
+    }
+    
+    .review-text {
+        font-size: 1rem;
+    }
+}

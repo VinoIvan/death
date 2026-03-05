@@ -1,0 +1,378 @@
+@import '../shared/variables.css';
+
+/* ========== ОБЩИЕ СТИЛИ ДЛЯ АВТОРИЗАЦИИ ========== */
+.auth-wrapper {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--accent-bg) 100%);
+}
+
+.auth-card {
+    max-width: 650px;
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 30px;
+    padding: 4rem 3.5rem;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Для регистрации карточка шире */
+.auth-card.register-card {
+    max-width: 700px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.auth-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.auth-subtitle {
+    color: var(--gray-600);
+    font-size: 1.6rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ========== ЭЛЕМЕНТЫ ФОРМ ========== */
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-label {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--gray-800);
+    margin-bottom: 0.8rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1.5rem;
+    color: var(--gray-500);
+    font-size: 1.6rem;
+    z-index: 1;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1.2rem 1.5rem 1.2rem 4.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 12px;
+    font-size: 1.5rem;
+    color: var(--gray-800);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: var(--white);
+}
+
+.form-control:hover {
+    border-color: var(--primary-color);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(139, 76, 85, 0.1);
+}
+
+.form-control.is-invalid {
+    border-color: var(--danger);
+}
+
+/* Переопределение стилей автозаполнения браузера */
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover,
+.form-control:-webkit-autofill:focus,
+.form-control:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: var(--gray-800) !important;
+    box-shadow: 0 0 0 30px white inset !important;
+    background-color: transparent !important;
+    background: white !important;
+    border: 1px solid var(--gray-300) !important;
+    caret-color: var(--gray-800) !important;
+}
+
+/* Для Firefox */
+.form-control:autofill {
+    background: white !important;
+    color: var(--gray-800) !important;
+    border: 1px solid var(--gray-300) !important;
+}
+
+/* Для полей с иконками при автозаполнении */
+.input-wrapper .form-control:-webkit-autofill {
+    padding-left: 4.5rem !important;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--gray-500);
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    transition: color 0.2s ease;
+    z-index: 2;
+}
+
+.password-toggle:hover {
+    color: var(--primary-color);
+}
+
+.error-message {
+    color: var(--danger);
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+}
+
+.help-text {
+    color: var(--gray-500);
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* ========== ЧЕКБОКСЫ И ОПЦИИ ========== */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--gray-700);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-label a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.checkbox-label a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.forgot-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.terms-group {
+    margin-top: 1rem;
+}
+
+/* ========== ТРЕБОВАНИЯ К ПАРОЛЮ ========== */
+.password-requirements {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem 0;
+}
+
+.password-requirements h6 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.requirement {
+    color: var(--gray-600);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ========== КНОПКИ ========== */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1.2rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+/* ========== ФУТЕР ФОРМЫ ========== */
+.auth-footer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.auth-footer p {
+    color: var(--gray-600);
+    font-size: 1.4rem;
+}
+
+.auth-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.auth-footer a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* ========== АЛЕРТЫ ========== */
+.alert {
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.alert-danger {
+    background: var(--danger-light);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+}
+
+.alert-success {
+    background: var(--success-light);
+    border: 1px solid var(--success);
+    color: var(--success);
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 768px) {
+    .auth-card,
+    .auth-card.register-card {
+        max-width: 100%;
+        padding: 3rem 2rem;
+    }
+    
+    .auth-title {
+        font-size: 2.8rem;
+    }
+    
+    .auth-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .form-label {
+        font-size: 1.4rem;
+    }
+    
+    .form-control {
+        font-size: 1.4rem;
+        padding: 1rem 1.2rem 1rem 4rem;
+    }
+    
+    .input-icon {
+        font-size: 1.4rem;
+        left: 1.2rem;
+    }
+    
+    .password-toggle {
+        font-size: 1.6rem;
+        right: 1.2rem;
+    }
+    
+    .btn-primary {
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card,
+    .auth-card.register-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .auth-title {
+        font-size: 2.4rem;
+    }
+    
+    .auth-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .checkbox-label {
+        font-size: 1.3rem;
+    }
+    
+    .password-requirements {
+        padding: 1.5rem;
+    }
+    
+    .password-requirements h6 {
+        font-size: 1.5rem;
+    }
+    
+    .requirement {
+        font-size: 1.3rem;
+    }
+}

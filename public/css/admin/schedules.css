@@ -1,0 +1,217 @@
+@import '../shared/variables.css';
+
+.schedules-container {
+    padding: 1.8rem;
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* Date navigation */
+.date-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: 1.2rem 1.8rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.date-navigation:hover {
+    border-color: var(--primary-color);
+}
+
+.date-nav-btn {
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--gray-200);
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--gray-600);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.date-nav-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: var(--primary-bg);
+}
+
+.current-date {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.current-date .day-of-week {
+    color: var(--gray-500);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Schedule day view */
+.schedule-day-view {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: 1.8rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2.5rem;
+}
+
+.schedule-day-view:hover {
+    border-color: var(--primary-color);
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.day-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+/* Slots list */
+.slots-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.slot-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem 1.8rem;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    flex-wrap: wrap;
+}
+
+.slot-item:hover {
+    border-color: var(--primary-color);
+}
+
+.slot-time {
+    min-width: 140px;
+    font-weight: 600;
+    color: var(--gray-900);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.1rem;
+}
+
+.slot-time i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.slot-service {
+    flex: 1;
+    min-width: 240px;
+}
+
+.slot-service-name {
+    font-weight: 500;
+    color: var(--gray-900);
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.slot-service-meta {
+    font-size: 0.95rem;
+    color: var(--gray-500);
+}
+
+.slot-status {
+    min-width: 90px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.slot-status .free,
+.slot-status .busy {
+    color: var(--gray-900);
+}
+
+.slot-actions {
+    display: flex;
+    gap: 0.6rem;
+    margin-left: auto;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .slot-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .slot-time {
+        min-width: auto;
+    }
+    
+    .slot-service {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .slot-actions {
+        width: 100%;
+        justify-content: flex-end;
+        margin-left: 0;
+    }
+    
+    .current-date {
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+    }
+    
+    .date-navigation {
+        flex-wrap: wrap;
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .schedules-container {
+        padding: 1.2rem;
+    }
+    
+    .current-date {
+        font-size: 1.2rem;
+    }
+    
+    .day-header h2 {
+        font-size: 1.3rem;
+    }
+}
