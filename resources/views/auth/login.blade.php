@@ -76,18 +76,12 @@
                 @enderror
             </div>
 
-            {{-- Опции формы --}}
+            {{-- Опции формы (только чекбокс "Запомнить меня") --}}
             <div class="form-options">
                 <label class="checkbox-label">
                     <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                     <span>Запомнить меня</span>
                 </label>
-
-                @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}" class="forgot-link">
-                        Забыли пароль?
-                    </a>
-                @endif
             </div>
 
             {{-- Кнопка отправки --}}

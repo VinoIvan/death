@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `vcm_laser` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `vcm_laser`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
 -- Host: localhost    Database: vcm_laser
